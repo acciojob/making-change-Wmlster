@@ -2,22 +2,22 @@ const makeChange = (c) => {
   // your name here
 
 	let obj={ 
-		'q':25,
-		'd':10,
-		'n':5,
-		'p':1
+		"q":25,
+		"d":10,
+		"n":5,
+		"p":1
 	}
-
+	
 	let oj={};
 
-	for(let i=0;i<4;i++)
+	for(let i in obj)
 		{
 			let num=obj[i];
 
-			let value1=c/num;
-			c-=c%num;
+			let value1=parseInt(c/num); 
+			c-=parseInt(num*value1);
 
-			oj.push(obj[i]:value1);
+			oj[i]=value1;  
 			
 		}  
 
@@ -25,5 +25,5 @@ const makeChange = (c) => {
 };
 
 // Do not the change the code below
-const c = prompt("Enter c: ");
+const c = prompt("Enter c: "); 
 alert(JSON.stringify(makeChange(c)));
